@@ -161,25 +161,25 @@ const runInOsascript = async (code: string, args: any[]) => {
 };
 
 const handleError = (OsascriptMessage: string) => {
-  const errorGroups = OsascriptMessage.match(
-    /execution\serror:\sError:\s(?<type>\w+):\s(?<message>.+)\(-\d+\)/,
-  )?.groups;
-  const errorTypeString = errorGroups?.type ?? "";
-  const errorMessage = errorGroups?.message?.trim() ??
-    "An error occured";
-  const errorMapping: Record<
-    string,
-    ErrorConstructor | AggregateErrorConstructor
-  > = {
-    "Error": Error,
-    "AggregateError": AggregateError,
-    "EvalError": EvalError,
-    "RangeError": RangeError,
-    "ReferenceError": ReferenceError,
-    "SyntaxError": SyntaxError,
-    "TypeError": TypeError,
-    "URIError": URIError,
-  };
-  const errorType = errorMapping?.[errorTypeString] ?? Error;
-  throw errorType(errorMessage);
+//   const errorGroups = OsascriptMessage.match(
+//     /execution\serror:\sError:\s(?<type>\w+):\s(?<message>.+)\(-\d+\)/,
+//   )?.groups;
+//   const errorTypeString = errorGroups?.type ?? "";
+//   const errorMessage = errorGroups?.message?.trim() ??
+//     "An error occured";
+//   const errorMapping: Record<
+//     string,
+//     ErrorConstructor | AggregateErrorConstructor
+//   > = {
+//     "Error": Error,
+//     "AggregateError": AggregateError,
+//     "EvalError": EvalError,
+//     "RangeError": RangeError,
+//     "ReferenceError": ReferenceError,
+//     "SyntaxError": SyntaxError,
+//     "TypeError": TypeError,
+//     "URIError": URIError,
+//   };
+//   const errorType = errorMapping?.[errorTypeString] ?? Error;
+//   throw errorType(errorMessage);
 };
